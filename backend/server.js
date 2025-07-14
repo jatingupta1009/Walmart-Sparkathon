@@ -1,5 +1,4 @@
 const express = require("express");
-const cors = require("cors");
 require("dotenv").config();
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
@@ -11,13 +10,25 @@ connectDB();
 const app = express();
 
 
-app.use(
-  cors({
-    origin: process.env.BASE_URL,
-    credentials: true,
-    methods: "PUT,POST,GET,DELETE,PATCH,HEAD",
-  })
-);
+const cors = require("cors");
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://walmart-sparkathon-git-main-jatin-guptas-projects-cd954d5c.vercel.app",
+  "https://walmart-sparkathon.vercel.app", // production domain if deployed
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+}));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
