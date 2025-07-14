@@ -6,6 +6,7 @@ import { useAppStore } from "../../../store/appStore";
 import API from "../../../utils/axios";
 import { IoSearch } from "react-icons/io5";
 import logo from "./FAM.png"
+import logo from "../FAM.png";
 
 const Header = () => {
   const { user, totalCart } = useAppStore();
