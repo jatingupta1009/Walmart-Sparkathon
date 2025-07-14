@@ -5,7 +5,6 @@ import UserMenu from "./UserMenu";
 import { useAppStore } from "../../../store/appStore";
 import API from "../../../utils/axios";
 import { IoSearch } from "react-icons/io5";
-import tesseractLogo from "../../assets/tesseract.png";
 
 const Header = () => {
   const { user, totalCart } = useAppStore();
@@ -45,7 +44,7 @@ const Header = () => {
           onClick={() => navigate("/")}
         >
           <img
-            src={tesseractLogo}
+            src="/assets/tesseract.png"
             alt="Logo"
             className="h-6 sm:h-8"
           />
