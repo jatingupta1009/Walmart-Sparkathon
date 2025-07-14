@@ -5,7 +5,7 @@ import UserMenu from "./UserMenu";
 import { useAppStore } from "../../../store/appStore";
 import API from "../../../utils/axios";
 import { IoSearch } from "react-icons/io5";
-import tesseractLogo from "../assets/tesseract.png";
+import tesseractLogo from "../../assets/tesseract.png";
 
 const Header = () => {
   const { user, totalCart } = useAppStore();
