@@ -5,6 +5,7 @@ import UserMenu from "./UserMenu";
 import { useAppStore } from "../../../store/appStore";
 import API from "../../../utils/axios";
 import { IoSearch } from "react-icons/io5";
+import logo from "./FAM.png"
 
 const Header = () => {
   const { user, totalCart } = useAppStore();
@@ -44,7 +45,7 @@ const Header = () => {
           onClick={() => navigate("/")}
         >
           <img
-            src="/assets/tesseract.png"
+            src={logo}
             alt="Logo"
             className="h-6 sm:h-8"
           />
@@ -58,7 +59,7 @@ const Header = () => {
           <div className="flex w-full max-w-3xl border border-gray-300 rounded-full overflow-hidden shadow-sm">
             <input
               type="text"
-              placeholder="Search Walmart"
+              placeholder="Search OurBasket"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="w-full px-4 py-2 focus:outline-none text-gray-700"
